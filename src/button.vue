@@ -12,7 +12,22 @@
 
 <script>
 export default {
-    props:["icon","iconPosition"]
+    // props:["icon","iconPosition"]
+    props:{
+        icon:{},
+        iconPosition:{
+            type:String,
+            default:"left",
+            validator(value){
+                // if(value !== "left" && value !=="right"){
+                //     return false;
+                // }else{
+                //     return true;
+                // }
+                return value !== "left" && value !=="right" ? false : true
+            }
+        }
+    }
 }
 </script>
 
@@ -28,13 +43,6 @@ export default {
         justify-content: center;
         align-items: center;
         vertical-align: middle;
-        > .icon {
-            order:1;
-            margin-right: .1em;
-        }
-        > .content {
-            order:2;
-        }
         &:hover {
             border-color: var(--border-color-hover);
         }
