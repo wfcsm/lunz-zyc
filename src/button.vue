@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import gIcon from './icon'
 export default {
     // props:["icon","iconPosition"]
     props:{
@@ -31,6 +32,9 @@ export default {
                 return value !== "left" && value !=="right" ? false : true
             }
         }
+    },
+    components:{
+        gIcon
     }
 }
 </script>
