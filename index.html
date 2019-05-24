@@ -19,7 +19,8 @@
             --border-radius:4px;
             --color:#999;
             --border-color:#999;
-            --border-color-hover:#666;
+            /* --border-color-hover:#666; */
+            --border-color-hover:red;
         }
         #app{
             margin: 20px;
@@ -32,11 +33,16 @@
 </head>
 <body>
     <div id="app">
-        <g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
+        <g-button icon="settings">按钮</g-button>
    
         <g-button icon="settings" :loading="loading1" @click="loading1 = !loading1" icon-position="right">按钮</g-button>
         <g-button icon="settings" :loading="loading2" @click="loading2 = !loading2" icon-position="left">按钮</g-button>
         <g-button icon="settings"  :loading="loading3" @click="loading3= !loading3" icon-position="left">按钮</g-button>
+        <g-button-group>
+            <g-button icon="left">上一页</g-button>
+            <g-button>中间</g-button>
+            <g-button icon="right" icon-position="right">下一页</g-button>
+        </g-button-group>
     </div>
     <script src="./src/app.js"></script>
     <script src="//at.alicdn.com/t/font_1207980_vh9ngm68eaa.js"></script>
