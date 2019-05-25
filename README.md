@@ -51,7 +51,7 @@ export default {
   }
 }
 ```
-4.引入svg symbol
+
 
 ## 文档
 

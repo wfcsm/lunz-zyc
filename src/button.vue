@@ -14,6 +14,7 @@
 import gIcon from './icon'
 export default {
     // props:["icon","iconPosition"]
+     name:"LunzButton",
     props:{
         icon:{},
         loading:{
