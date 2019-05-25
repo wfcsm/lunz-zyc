@@ -28,23 +28,31 @@
         body{
             font-size: var(--font-size);
         }
+        .box{
+            margin: 20px;
+        }
     </style>
+  
 
 </head>
 <body>
     <div id="app">
-         
-        <g-button icon="settings">按钮</g-button>
-   
-        <g-button icon="settings" :loading="loading1" @click="loading1 = !loading1" icon-position="right">按钮</g-button>
-        <g-button icon="settings" :loading="loading2" @click="loading2 = !loading2" icon-position="left">按钮</g-button>
-        <g-button icon="settings"  :loading="loading3" @click="loading3= !loading3" icon-position="left">按钮</g-button>
-        <g-button-group>
-            <g-button icon="left">上一页</g-button>
-            <g-button>中间</g-button>
-            <g-button icon="right" icon-position="right">下一页</g-button>
-        </g-button-group>
-        <g-input ></g-input> 
+        <div class="box">
+            <g-button icon="settings">按钮</g-button>
+            <g-button icon="settings" :loading="loading1" @click="loading1 = !loading1" icon-position="right">按钮</g-button>
+            <g-button icon="settings" :loading="loading2" @click="loading2 = !loading2" icon-position="left">按钮</g-button>
+            <g-button icon="settings"  :loading="loading3" @click="loading3= !loading3" icon-position="left">按钮</g-button>
+            <g-button-group>
+                <g-button icon="left">上一页</g-button>
+                <g-button>中间</g-button>
+                <g-button icon="right" icon-position="right">下一页</g-button>
+            </g-button-group>
+        </div>
+        <div class="box">
+            <g-input value="张三" :disabled="true"></g-input> 
+            <g-input value="张三" :readonly="true"></g-input> 
+            <g-input value="张三" error="姓名不能少于两个字"></g-input> 
+        </div>
     </div>
     <script src="./src/app.js"></script>
 </body>
