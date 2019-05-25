@@ -3,6 +3,10 @@
         <input :value="value" 
                :disabled="disabled" 
                :readonly="readonly"
+               @change="$emit('change',$event.target.value)"
+               @input="$emit('input',$event.target.value)"
+               @foucs="$emit('foucs',$event.target.value)"
+               @blur="$emit('blur',$event.target.value)"
                type="text">
         <template v-if="error" >
             <icon name="error" class="icon-error"></icon>
