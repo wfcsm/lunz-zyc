@@ -13,7 +13,7 @@ export default {
         gutter:{
             type:[Number,String]
         },
-        algin:{
+        position:{
             type:String,
             validator(value){
               return  ["left","right","center"].includes(value)
@@ -29,8 +29,8 @@ export default {
             }
         },
         rowClass(){
-            let {algin} = this;
-            return [algin && `align-${algin}`]
+            let {position} = this;
+            return [position && `align-${position}`]
         }
     },
     mounted(){

@@ -26,15 +26,15 @@ export default {
     },
     ipad: {
       type: Object,
-       validator:validator,
+      validator:validator,
     },
     narrowPc: {
       type: Object,
-       validator:validator,
+      validator:validator,
     },
     pc: {
       type: Object,
-       validator:validator,
+      validator:validator,
     },
     widePc: {
       type: Object,
@@ -75,7 +75,7 @@ export default {
           ...createClasses(ipad,'ipad-'),
           ...createClasses(narrowPc,'narrow-pc-'),
           ...createClasses(pc,'pc-'),
-          ...createClasses(widePc, 'wide-pc'),
+          ...createClasses(widePc, 'wide-pc-'),
         ];
     }
   }
