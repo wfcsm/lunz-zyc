@@ -38,13 +38,27 @@
 <body>
     <div id="app">
         <div style="border: 1px solid black">
-            <g-row gutter="20">
-                <g-col>sdf</g-col>
-                <g-col>sdfsf</g-col>
+            <g-row  position="left">
+                <g-col span="9">
+                    <g-row>
+                        <g-col>1</g-col>
+                        <g-col>2</g-col>
+                        <g-col>3</g-col>
+                        <g-col>4</g-col>
+                    </g-row>
+                </g-col>
+                <g-col span="15">
+                    <g-row algin="right">
+                        <g-col>1</g-col>
+                        <g-col>2</g-col>
+                        <g-col>3</g-col>
+                        <g-col>4</g-col>
+                    </g-row>
+                </g-col>
             </g-row>
         </div>
         <hr>
-        <div class="box">
+        <!-- <div class="box">
             <g-button icon="settings">按钮</g-button>
             <g-button icon="settings" :loading="loading1" @click="loading1 = !loading1" icon-position="right">按钮</g-button>
             <g-button icon="settings" :loading="loading2" @click="loading2 = !loading2" icon-position="left">按钮</g-button>
@@ -60,7 +74,7 @@
             <g-input value="张三" :readonly="true"></g-input> 
             <g-input value="张三" error="姓名不能少于两个字"></g-input> 
             <g-input value="张三" @change="inputChange"></g-input> 
-        </div>
+        </div> -->
     </div>
     <script src="./src/app.js"></script>
 </body>

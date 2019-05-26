@@ -1,5 +1,7 @@
 <template>
-    <div class="row" :style="rowStyle">
+    <div class="row" 
+        :style="rowStyle"
+        :class="rowClass">
         <slot></slot>
     </div>
 </template>
@@ -10,6 +12,12 @@ export default {
     props:{
         gutter:{
             type:[Number,String]
+        },
+        algin:{
+            type:String,
+            validator(value){
+              return  ["left","right","center"].includes(value)
+            }
         }
     },
     computed:{
@@ -19,6 +27,10 @@ export default {
                 marginLeft:-gutter/2+'px',
                 marginRight:-gutter/2+'px'
             }
+        },
+        rowClass(){
+            let {algin} = this;
+            return [algin && `align-${algin}`]
         }
     },
     mounted(){
@@ -32,6 +44,15 @@ export default {
 <style lang="scss" scoped>
  .row{
         display: flex;
+        &.align-left{
+            justify-content: flex-start;
+        }
+        &.align-right{
+            justify-content: flex-end;
+        }
+        &.align-center{
+            justify-content: center;
+        }
     }
 </style>
 
