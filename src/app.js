@@ -40,9 +40,19 @@ new Vue({
         inputChange(e){
             console.log(e.target.value)
         },
+       
         showToast(){
-            console.log(1)
-            this.$toast("我是message");
+            this.$toast("我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安",{
+                closeButton:{
+                    text:"知道了",
+                    callback(toast){
+                        toast.log()
+                    }
+                },
+                enableHtml:false,
+                autoClose:false,
+                position:"center"
+            });
         }
     }
 })
