@@ -8,8 +8,10 @@ import Col from './col.vue'
 import Layout from './layout.vue'
 import Header from './header.vue'
 import Main from './main.vue'
-import Footer from './Footer.vue'
-import Aside from './Aside.vue'
+import Footer from './footer.vue'
+import Aside from './aside.vue'
+import Toast from './toast.vue'
+import plugin from './plugin'
 
 Vue.component("g-button",Button)
 Vue.component("g-icon",Icon)
@@ -22,6 +24,9 @@ Vue.component("g-header",Header)
 Vue.component("g-main",Main)
 Vue.component("g-footer",Footer)
 Vue.component("g-aside",Aside)
+Vue.component("g-toast",Toast)
+Vue.use(plugin)
+
 
 new Vue({
     el:"#app",
@@ -34,6 +39,10 @@ new Vue({
     methods:{
         inputChange(e){
             console.log(e.target.value)
+        },
+        showToast(){
+            console.log(1)
+            this.$toast("我是message");
         }
     }
 })
