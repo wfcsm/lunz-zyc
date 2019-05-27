@@ -42,7 +42,7 @@ new Vue({
         },
        
         showToast(){
-            this.$toast("我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安我爱安",{
+            this.$toast("qwedsa",{
                 closeButton:{
                     text:"知道了",
                     callback(toast){
@@ -51,7 +51,7 @@ new Vue({
                 },
                 enableHtml:false,
                 autoClose:false,
-                position:"center"
+                position:"bottom"
             });
         }
     }

@@ -6,7 +6,7 @@
     </div>
 
     <span class="line" ref="line"></span>
-    <span v-if="closeButton" @click="onClickClose">{{closeButton.text}}</span>
+    <span v-if="closeButton" @click="onClickClose" class="close">{{closeButton.text}}</span>
   </div>
 </template>
 
@@ -15,13 +15,17 @@ export default {
   name: "LunzToast",
   props: {
     autoClose: {
-      type: Boolean,
-      default: true
+      type: [Boolean, Number],
+      default: 5,
+      validator(value){
+        if(value === false || typeof value === 'number'){
+          return true
+        }else{
+          return false
+        }
+      }
     },
-    autoCloseTime: {
-      type: Number,
-      default: 50
-    },
+   
     closeButton: {
       type: Object,
       default() {
@@ -58,7 +62,7 @@ export default {
       if (this.autoClose) {
         setTimeout(() => {
           this.close();
-        }, this.autoCloseTime * 1000);
+        }, this.autoClose * 1000);
       }
     },
     updateStyles() {
@@ -70,6 +74,7 @@ export default {
     },
     close() {
       this.$el.remove();
+      this.$emit('close')
       this.$destroy();
     },
     log() {
@@ -86,7 +91,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@keyframes fade-in {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
 .toast {
+  animation: fade-in 1s;
   font-size: 14px;
   color: #fff;
   min-height: 56px;
