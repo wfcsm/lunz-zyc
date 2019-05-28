@@ -1,6 +1,6 @@
 chai.should();
 import Vue from 'vue'
-import Col from '../src/Col.vue'
+import Col from '../src/col.vue'
 
 Vue.config.productionTip = false
 Vue.config.devtools = false
