@@ -31,7 +31,21 @@
 </head>
 <body>
     <div id="app">
-        <button @click="showToast">按钮</button>
+        <g-tabs :selected.sync="selectedTab">
+            <g-tabs-head>
+                <template v-slot:action>
+                    <button>具名插槽</button>
+                </template>
+                <g-tabs-item name="wulei">武磊</g-tabs-item>
+                <g-tabs-item name="messi">梅西</g-tabs-item>
+                <g-tabs-item name="c">C罗</g-tabs-item>
+            </g-tabs-head>
+            <g-tabs-body>
+                <g-tabs-pane name="wulei">西班牙人</g-tabs-pane>
+                <g-tabs-pane name="messi">巴萨罗那</g-tabs-pane>
+                <g-tabs-pane name="c">尤文图斯</g-tabs-pane>
+            </g-tabs-body>
+        </g-tabs>
     </div>
     <script src="./src/app.js"></script>
 </body>

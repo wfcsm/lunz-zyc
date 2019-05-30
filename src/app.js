@@ -12,6 +12,11 @@ import Footer from './footer.vue'
 import Aside from './aside.vue'
 import Toast from './toast.vue'
 import plugin from './plugin'
+import PTabs from './tabs.vue'
+import PTabsBody from './tabs-body.vue'
+import PTabsHead from './tabs-head.vue'
+import PTabsItem from './tabs-item.vue'
+import PTabsPane from './tabs-pane.vue'
 
 Vue.component("g-button",Button)
 Vue.component("g-icon",Icon)
@@ -25,16 +30,18 @@ Vue.component("g-main",Main)
 Vue.component("g-footer",Footer)
 Vue.component("g-aside",Aside)
 Vue.component("g-toast",Toast)
+Vue.component("g-tabs",PTabs)
+Vue.component("g-tabs-body",PTabsBody)
+Vue.component("g-tabs-head",PTabsHead)
+Vue.component("g-tabs-item",PTabsItem)
+Vue.component("g-tabs-pane",PTabsPane)
 Vue.use(plugin)
 
 
 new Vue({
     el:"#app",
     data:{
-        message:"hi",
-        loading1: false,
-        loading2: true,
-        loading3: false
+        selectedTab:"wulei"
     },
     methods:{
         inputChange(e){
