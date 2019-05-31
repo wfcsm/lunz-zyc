@@ -6,7 +6,12 @@
 
 <script>
 export default {
-    name:"LunzBody"
+    name:"LunzTabsBody",
+    inject:["eventBus"],
+    created(){
+     
+    },
+   
 }
 </script>
 
