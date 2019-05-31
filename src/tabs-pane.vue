@@ -1,5 +1,5 @@
 <template>
-  <div class="pane" :class="classes">
+  <div class="pane" :class="classes" v-if="active">
     <slot></slot>
   </div>
 </template>
@@ -43,7 +43,6 @@ export default {
 <style lang="scss" scoped>
 .pane {
   &.classes {
-    background-color: red;
   }
 }
 </style>
