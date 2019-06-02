@@ -6,7 +6,7 @@
       v-if="visible"
       :class="{[`position-${position}`]:true}"
     >
-      <slot name="content"></slot>
+      <slot name="content"  :close="close" ></slot>
     </div>
     <span ref="triggerWrapper" style="display:inline-block">
       <slot></slot>
@@ -17,6 +17,22 @@
 <script>
 export default {
   name: "LunzPopover",
+  props: {
+    position: {
+      type: String,
+      default: "top",
+      validator(value) {
+        return ["top", "bottom", "left", "right"].indexOf(value) >= 0;
+      }
+    },
+    trigger: {
+      type: String,
+      default: "click",
+      validator(value) {
+        return ["click", "hover"].indexOf(value) >= 0;
+      }
+    }
+  },
   data() {
     return {
       visible: false
@@ -54,22 +70,7 @@ export default {
       }
     }
   },
-  props: {
-    position: {
-      type: String,
-      default: "top",
-      validator(value) {
-        return ["top", "bottom", "left", "right"].indexOf(value) >= 0;
-      }
-    },
-    trigger: {
-      type: String,
-      default: "click",
-      validator(value) {
-        return ["click", "hover"].indexOf(value) >= 0;
-      }
-    }
-  },
+  
   methods: {
     positionContent() {
       const { contentWrapper, triggerWrapper } = this.$refs;
@@ -174,10 +175,12 @@ $border-radius: 4px;
     &::before,
     &::after {
       left: 10px;
+      border-bottom: none;
     }
     &::before {
       border-top-color: black;
       top: 100%;
+      
     }
     &::after {
       border-top-color: white;
@@ -186,13 +189,16 @@ $border-radius: 4px;
   }
   &.position-bottom {
     margin-top: 10px;
+    
     &::before,
     &::after {
       left: 10px;
+      border-top: none;
     }
     &::before {
       border-bottom-color: black;
       bottom: 100%;
+      
     }
     &::after {
       border-bottom-color: white;
@@ -202,14 +208,17 @@ $border-radius: 4px;
   &.position-left {
     transform: translateX(-100%);
     margin-left: -10px;
+    
     &::before,
     &::after {
       transform: translateY(-50%);
       top: 50%;
+     border-right: none;
     }
     &::before {
       border-left-color: black;
       left: 100%;
+       
     }
     &::after {
       border-left-color: white;
@@ -218,14 +227,17 @@ $border-radius: 4px;
   }
   &.position-right {
     margin-left: 10px;
+    
     &::before,
     &::after {
       transform: translateY(-50%);
       top: 50%;
+      border-left: none;
     }
     &::before {
       border-right-color: black;
       right: 100%;
+      
     }
     &::after {
       border-right-color: white;
