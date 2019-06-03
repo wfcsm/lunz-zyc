@@ -18,6 +18,8 @@ import PTabsHead from './tabs-head.vue'
 import PTabsItem from './tabs-item.vue'
 import PTabsPane from './tabs-pane.vue'
 import Popover from './popover'
+import PCollapse from './collapse'
+import PCollapseItem from './collapse-item'
 
 Vue.component("g-button",Button)
 Vue.component("g-icon",Icon)
@@ -37,13 +39,16 @@ Vue.component("g-tabs-head",PTabsHead)
 Vue.component("g-tabs-item",PTabsItem)
 Vue.component("g-tabs-pane",PTabsPane)
 Vue.component("g-popover",Popover)
+Vue.component("g-collapse",PCollapse)
+Vue.component("g-collapse-item",PCollapseItem)
 Vue.use(plugin)
 
 
 new Vue({
     el:"#app",
     data:{
-        selectedTab:"wulei"
+        selectedTab:"wulei",
+        selected:["2","1"]
     },
     methods:{
         yyy(){

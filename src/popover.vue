@@ -120,13 +120,11 @@ export default {
       this.visible = true;
       setTimeout(() => {
         this.positionContent();
-        console.log("监听document");
         document.addEventListener("click", this.onClickDocument);
       }, 0);
     },
     close() {
       this.visible = false;
-      console.log("关闭");
       document.removeEventListener("click", this.onClickDocument);
     },
     onClick(event) {
